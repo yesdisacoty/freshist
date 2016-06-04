@@ -1,0 +1,3 @@
+<%= form_for @harvest, url: harvests_path, html: { multipart: true } do |form| %>
+  <%= form.file_field :harvest_photo %>
+<% end %>
