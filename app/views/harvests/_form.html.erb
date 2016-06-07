@@ -1,0 +1,14 @@
+<%= form_for (@harvest) do |f|%>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :harvest_photo %>
+    <%= f.file_field :harvest_photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Sell That Food' %>
+    <%= link_to 'Nevermind', harvests_path, class: 'button' %>
+  </div>    
+<% end %>

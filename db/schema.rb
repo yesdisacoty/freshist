@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603193709) do
+ActiveRecord::Schema.define(version: 20160607015634) do
 
   create_table "harvests", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.decimal  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "harvest_photo_file_name"
+    t.string   "harvest_photo_content_type"
+    t.integer  "harvest_photo_file_size"
+    t.datetime "harvest_photo_updated_at"
   end
 
 end

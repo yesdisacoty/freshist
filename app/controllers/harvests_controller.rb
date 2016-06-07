@@ -10,6 +10,13 @@ class HarvestsController < ApplicationController
     end
     
     def create
+        @harvest = Harvest.new(harvest_params)
+        
+        if @harvest.save
+            redirect_to @harvest, notice: 'Harvest was successfully uploaded.'
+        else
+            render action: 'new'
+        end
     end
     
     def update
@@ -19,6 +26,7 @@ class HarvestsController < ApplicationController
     end
     
     def show
+        @harvest = Harvest.find(params[:id])
     end
     
     def edit
