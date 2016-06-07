@@ -3,10 +3,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
-    bucket: ENV.fetch('freshist-app'),
-    access_key_id: ENV.fetch('AKIAJUKFPQHCQ7SBXDLA'),
-    secret_access_key: ENV.fetch('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'),
-    s3_region: ENV.fetch('Oregon'),
+    bucket: ENV.fetch('AMAZON_BUCKET'),
+    access_key_id: ENV.fetch('AMAZON_KEY'),
+    secret_access_key: ENV.fetch('AMAZON_SECRET_KEY'),
+    s3_region: ENV.fetch('AMAZON_REGION'),
   }
 }
 
