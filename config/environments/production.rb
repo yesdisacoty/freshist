@@ -85,4 +85,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Change before depoying to production
+  config.action_mailer.default_url_options = { host: 'freshistapp-disacoty.c9users.io' }
 end

@@ -1,1 +1,9 @@
-index
+index<br>
+<% @harvests.each do |harvest| %>
+    <%= link_to harvest.name, harvest %>
+    <%=harvest.price%>
+    <%= harvest.description %>
+    <%= link_to "Show", harvest %>
+    <%= link_to "Edit", edit_harvest_path(harvest) %>
+    <%= link_to "delete", harvest, method: :delete, data: { confirm: "You sure?" } %>
+<% end %>
