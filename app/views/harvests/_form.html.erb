@@ -12,8 +12,8 @@
     <%= f.text_field :price %>
   </div>  
   <div class="field">
-    <%= f.label :harvest_photo %>
-    <%= f.file_field :harvest_photo %>
+    <%= f.label :harvest_photos %>
+    <%= f.file_field :harvest_photos, multiple: true %>
   </div>
   <div class="actions">
     <%= f.submit 'Sell That Food' %>

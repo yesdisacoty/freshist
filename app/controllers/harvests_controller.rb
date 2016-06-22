@@ -44,7 +44,7 @@ class HarvestsController < ApplicationController
     end
     
     def harvest_params
-        params.require(:harvest).permit(:name, :description, :price, :harvest_photo) 
+        params.require(:harvest).permit(:name, :description, :price, {harvest_photos: []} ) 
     end
     
     def check_user
