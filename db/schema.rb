@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610190147) do
+ActiveRecord::Schema.define(version: 20160620043021) do
 
   create_table "harvests", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20160610190147) do
     t.integer  "harvest_photo_file_size"
     t.datetime "harvest_photo_updated_at"
     t.integer  "user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "fulfillment"
+    t.integer  "harvest_id"
+    t.integer  "seller_id"
+    t.integer  "buyer_id"
   end
 
   create_table "users", force: :cascade do |t|

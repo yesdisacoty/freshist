@@ -1,4 +1,5 @@
 class HarvestsController < ApplicationController
+    before_action :set_harvest, only: [:edit, :update, :destroy, :show]
     before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
     before_filter :check_user, only: [:edit, :update, :destroy]
     
@@ -37,6 +38,10 @@ class HarvestsController < ApplicationController
     end
     
     private
+    
+    def set_harvest
+        @harvest = Harvest.find(params[:id]) 
+    end
     
     def harvest_params
         params.require(:harvest).permit(:name, :description, :price, :harvest_photo) 

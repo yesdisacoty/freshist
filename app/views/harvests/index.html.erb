@@ -1,9 +1,13 @@
 index<br>
 <% @harvests.each do |harvest| %>
+    <%= image_tag harvest.harvest_photo(:thumb) %>
     <%= link_to harvest.name, harvest %>
-    <%=harvest.price%>
+    <%= "#{harvest.user.name}" %>
+    <%= harvest.price %>
     <%= harvest.description %>
+    <% if harvest.user == current_user %>
     <%= link_to "Show", harvest %>
     <%= link_to "Edit", edit_harvest_path(harvest) %>
     <%= link_to "delete", harvest, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
 <% end %>

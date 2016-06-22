@@ -4,6 +4,9 @@
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://stripe.js' %>
+  
+  <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLIC_KEY"] %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,6 +15,7 @@
   <%= link_to "contact", pages_contact_path %>
   <%= link_to "new harvest", new_harvest_path %>
   <% if user_signed_in? %>
+  <%= link_to "edit profile", edit_user_registration_path %>
   <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
   <% else %> 
   <%= link_to "sign up", new_user_registration_path %>

@@ -14,12 +14,9 @@ class HarvestsController < ApplicationController
         @user = User.new(user_params)
         
         if @user.save
-           name = params[:user][:name] 
-           email = params[:user][:email] 
-           body = params[:user][:body]
-           
-           ContactMailer.contact(name, email, body).deliver
-            redirect_to @user, notice: 'Nice job, buddy.'
+            # Deliver the signup email
+            ContactMailer.send_signup_email(@user).deliver
+            redirect_to(@user, :notice => 'User created')
         else
             redirect_to new_user_path, notice: "Try again, pal."
         end

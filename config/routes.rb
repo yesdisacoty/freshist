@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
   
-  resources 'harvests'
+  resources 'harvests' do
+    resources 'orders'
+  end
   root 'harvests#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
