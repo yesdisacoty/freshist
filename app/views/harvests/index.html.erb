@@ -1,6 +1,6 @@
 index<br>
 <% @harvests.each do |harvest| %>
-    <%= image_tag harvest.harvest_photo(:thumb) %>
+    <%= image_tag harvest.harvest_photos %>
     <%= link_to harvest.name, harvest %>
     <%= "#{harvest.user.name}" %>
     <%= harvest.price %>

@@ -17,6 +17,7 @@ gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'figaro'
 gem 'devise'
 gem 'stripe'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
