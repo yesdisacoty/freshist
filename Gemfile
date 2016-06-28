@@ -18,22 +18,21 @@ gem 'figaro'
 gem 'devise'
 gem 'stripe'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'fog'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 #Sendgrid for email
 gem 'sendgrid-ruby'
+gem 'pg'
+gem 'acts-as-taggable-on', '~> 3.4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
-group :development, :test do
-  gem 'sqlite3'
-end
 
 group :doc do
   gem 'sdoc', require: false

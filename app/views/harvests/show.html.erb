@@ -1,1 +1,4 @@
-<%= image_tag @harvest.harvest_photo.url(:full) %>
+<h3><%= @harvest.name %></h3>
+<p><%= @harvest.description %></p>
+<p><%= number_to_currency(@harvest.price) %></p>
+<%= link_to "Buy It Now", new_harvest_order_path(@harvest), class: "btn btn-primary" %>
