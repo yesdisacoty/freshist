@@ -10,6 +10,10 @@
   <div class="field">
     <%= f.label :price %>
     <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :fulfillment %>
+    <%= f.select(:fulfillment, options_for_select([["Delivery", "Delivery"], ["Pick-up", "Pick-up"], ["Meet", "Meet"]])) %>
   </div>  
   <!--<div class="field">-->
   <!--  <%= f.label :harvest_photos %>-->
