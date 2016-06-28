@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'pages/welcome'
   get 'pages/about'
   get 'pages/contact'
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"  
   
   resources 'harvests' do
     resources 'orders'
