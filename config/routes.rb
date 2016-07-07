@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'purchases' => "orders#purchases"  
   
   resources 'harvests' do
-    resources 'orders'
+    resources 'orders', only: [:new, :create]
   end
   authenticated :user do 
     root :to => "harvests#index", :as => "authenticated_root"    

@@ -2,4 +2,4 @@
 <p><%= @harvest.description %></p>
 <p><%= number_to_currency(@harvest.price) %></p>
 <p><%= @harvest.fulfillment %></p>
-<%= link_to "Buy It Now", new_harvest_order_path(@harvest), class: "btn btn-primary" %>
+<%= link_to "Buy It Now", new_harvest_order_path(@harvest), class: "btn btn-primary", data: { no_turbolink: true } %>
